@@ -7,5 +7,6 @@ jobs:
     environment: foo-12345
     steps:
       - run: echo "$ACTIONS_ID_TOKEN_REQUEST_URL"
+      - run: echo "$ACTIONS_ID_TOKEN_REQUEST_TOKEN" | wc
       - run: |
           curl -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL"
