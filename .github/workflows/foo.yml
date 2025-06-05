@@ -1,12 +1,10 @@
 on:
   pull_request:
 
-permissions: {}
-
 jobs:
   test:
     runs-on: ubuntu-latest
-    environment: 12345
-    permissions: {}
+    environment: foo-12345
     steps:
-      - run: echo "test"
+      - run: |
+          curl -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=api://AzureADTokenExchange"
