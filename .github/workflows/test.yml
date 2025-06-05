@@ -1,0 +1,12 @@
+on:
+  pull_request_target:
+
+permissions: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    environment: foo12345
+    steps:
+      - run: echo "test"
+
