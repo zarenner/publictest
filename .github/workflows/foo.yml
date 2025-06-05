@@ -6,7 +6,7 @@ permissions: {}
 jobs:
   test:
     runs-on: ubuntu-latest
-    environment: test
+    environment: 12345
     permissions: {}
     steps:
       - run: echo "test"
